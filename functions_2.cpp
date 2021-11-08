@@ -5,7 +5,7 @@ string itc_dlin_slovo(string str)
     int max_cnt = 0;
     int cnt = 0;
     string str2 = "";
-    string answer = ""
+    string answer = "";
     long long _size = itc_len(str);
     for (int i = 0; i < _size; i++)
     {
@@ -17,6 +17,7 @@ string itc_dlin_slovo(string str)
                 cnt = 0;
                 answer = str2;
             }
+            str2 = "";
         }
         else
         {
@@ -24,5 +25,11 @@ string itc_dlin_slovo(string str)
             str2 += str[i];
         }
     }
-    return cnt;
+    if (cnt > max_cnt)
+    {
+        max_cnt = cnt;
+        cnt = 0;
+        answer = str2;
+    }
+    return answer;
 }
