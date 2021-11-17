@@ -47,14 +47,14 @@ string itc_DecToBin(string str)
 		{
 			if (i > 0 && str[i - 1] >= '0' && str[i - 1] <= '9')
 			{
-				result += itc_toBin(num);
+				result += itc_decToBase(num, 2);
 				num = 0;
 			}
 			result += str[i];
 		}
 	}
 	if (_size > 0 && str[_size - 1] >= '0' && str[_size - 1] <= '9')
-		result += itc_toBin(num);
+		result += itc_decToBase(num, 2);
 	return result;
 }
 
