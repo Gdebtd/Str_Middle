@@ -36,3 +36,12 @@ int itc_find_str(string str1, string str2)
 	}
 	return -1;
 }
+
+string itc_rev_str(string str)
+{
+	string result = "";
+	int _size = itc_len(str);
+	for (int i = _size - 1; i >= 0; i--)
+		result += str[i];
+	return result;
+}
