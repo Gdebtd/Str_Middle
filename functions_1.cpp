@@ -44,10 +44,10 @@ int itc_countWords(string str)
 	str += " ";
 	bool notSymbol = false;
 	int cnt = 0;
-	long long _size = itc_len(str);
-	for (int i = 0; i < _size; i++)
+	int _size = itc_len(str);
+	for (int i = 1; i < _size; i++)
 	{
-		if (str[i] == ' ')
+		if (str[i] == ' ' && (str[i - 1] >= 'a' && str[i - 1] <= 'z' || str[i - 1] >= 'A' && str[i - 1] <= 'Z'))
 		{
 			if (!notSymbol)
 				cnt++;
