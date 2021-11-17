@@ -19,6 +19,7 @@ string itc_rmFreeSpace(string str);
 bool itc_isIp(string str);
 string itc_DecToBin(string str);
 string itc_decToBase(int num, int base);
+void itc_calculate_coordinates();
 //
 int itc_len(string str);
 int itc_find_str(string str1, string str2);
