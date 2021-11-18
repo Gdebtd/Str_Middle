@@ -2,8 +2,10 @@
 
 string itc_maxCharWord(string str)
 {
+	if (str == "")
+		reutrn "error";
 	str += " ";
-	if (itc_countWords(str) == 1)
+	if (itc_countWords(str) <= 1)
 		return "error";
 	int max_cnt = 0, cnt = 0, _size = itc_len(str);
 	string str2 = "", answer = "";
@@ -33,6 +35,8 @@ string itc_maxCharWord(string str)
 
 char itc_sameChar(string str)
 {
+	if (str == "")
+		return "";
 	str += " ";
 	int _size = itc_len(str);
 	char c = ' ';
@@ -59,6 +63,8 @@ bool itc_isFirstInSecond(string s1, string s2)
 
 string itc_Cezar(string str, int k)
 {
+	if (str == "")
+		return "";
 	string result = "";
 	int _size = itc_len(str);
 	for (int i = 0; i < _size; i++)
@@ -88,6 +94,8 @@ string itc_Cezar(string str, int k)
 
 string itc_rmFreeSpace(string str)
 {
+	if (str == "")
+		return "";
 	string result = "";
 	int _size = itc_len(str);
 	for (int i = 0; i < _size; i++)
