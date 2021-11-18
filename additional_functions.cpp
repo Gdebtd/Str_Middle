@@ -14,8 +14,10 @@ int itc_len(string str)
 
 int itc_find_str(string str1, string str2)
 {
-	if (str1 == "" || str2 == "")
+	if (str1 == "")
 		return -1;
+	if (str1 != "" && str2 == "")
+		return 0;
 	int len2 = itc_len(str2), len = itc_len(str1);
 	int i = 0, i2 = 0, index = -1;
 	while (i < len)
