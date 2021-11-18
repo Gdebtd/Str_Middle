@@ -23,7 +23,7 @@ string itc_maxCharWord(string str)
 		}
 		else
 		{
-			if (str[i] >= 'a' && str[i] <= 'z' || str[i] >= 'A' && str[i] <= 'Z')
+			if ((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <= 'Z'))
 			{
 				cnt++;
 				str2 += str[i];
