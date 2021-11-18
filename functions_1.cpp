@@ -28,6 +28,8 @@ bool  itc_compare(string str1, string str2)
 	if (itc_len(str1) == itc_len(str2))
 	{
 		int _size = itc_len(str1);
+		if (_size == 0)
+			return false;
 		for (int i = 0; i < _size; i++)
 		{
 			if (str1[i] != str2[i])
@@ -41,6 +43,8 @@ bool  itc_compare(string str1, string str2)
 
 int itc_countWords(string str)
 {
+	if (str == "")
+		return 0;
 	str += " ";
 	bool notSymbol = false;
 	int cnt = 0;
