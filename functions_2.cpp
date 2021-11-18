@@ -78,6 +78,9 @@ string itc_Cezar(string str, int k)
 			else
 				c = str[i] + k;
 		}
+		
+		else
+			c = str[i];
 		result += c;
 	}
 	return result;
