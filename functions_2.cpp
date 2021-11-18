@@ -3,7 +3,7 @@
 string itc_maxCharWord(string str)
 {
 	if (str == "")
-		reutrn "error";
+		return "error";
 	str += " ";
 	if (itc_countWords(str) <= 1)
 		return "error";
