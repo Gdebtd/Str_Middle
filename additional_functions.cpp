@@ -53,3 +53,57 @@ string itc_rev_str(string str)
 		result += str[i];
 	return result;
 }
+
+bool itc_isValidWord(string str)
+{
+	if (str == "")
+		return false;
+	int len = itc_len(str);
+	bool brackeys = false;
+	if (str[0] == '(')
+	{
+		if (str[len - 1] != ')')
+			return false;
+		else
+			brackeys = true;
+	}
+	else if (!((str[0] >= 'a' && str[0] <= 'z') || (str[0] >= 'A' && str[0] <= 'Z')))
+		return false;
+	if (!brackeys)
+	{
+		if (!((str[len - 1] >= 'a' && str[len - 1] <= 'z') || (str[len - 1] >= 'A' && str[len - 1] <= 'Z')))
+		{
+			if (str[len - 1] == '.' || str[len - 1] == ',' || str[len - 1] == '?' || str[len - 1] == '!')
+			{
+				if (!((str[len - 2] >= 'a' && str[len - 2] <= 'z') || (str[len - 2] >= 'A' && str[len - 2] <= 'Z')))
+					return false;
+			}
+			else
+				return false;
+		}
+	}
+	for (int i = 1; i < len - 1; i++)
+	{
+		if (!((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <= 'Z')))
+			return false;
+	}
+	return true;
+}
+
+int itc_sign_cnt(string str)
+{
+	int cnt = 0;
+	for (int i = 0; str[i] != '\0'; i++)
+		if (!((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <= 'Z')))
+			cnt++;
+	return cnt;
+}
+
+string itc_get_word(string str)
+{
+	string result = "";
+	for (int i = 0; str[i] != '\0'; i++)
+		if ((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <= 'Z'))
+			result += str[i];
+	return result;
+}
