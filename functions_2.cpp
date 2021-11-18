@@ -97,9 +97,12 @@ string itc_rmFreeSpace(string str)
 	}
 	string result = "";
 	int len = itc_len(_result);
+	int first = 0;
 	if (_result[len - 1] == ' ')
 		len--;
-	for (int i = 0; i < len; i++)
+	if (_result[0] == ' ')
+		first++;
+	for (int i = first; i < len; i++)
 		result += _result[i];
 	return result;
 }
