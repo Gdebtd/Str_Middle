@@ -7,7 +7,7 @@ bool itc_isIp(string str)
 		return false;
 	for (int i = 0; i < _size; i++)
 	{
-		if (!(str[i] >= '0' && str[i] <= '9' || str[i] == '.'))
+		if (!((str[i] >= '0' && str[i] <= '9') || str[i] == '.'))
 			return false;
 		if (str[i] == '.')
 			zeroCnt++;
