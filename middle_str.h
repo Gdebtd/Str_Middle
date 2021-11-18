@@ -24,5 +24,8 @@ void itc_calculate_coordinates();
 int itc_len(string str);
 int itc_find_str(string str1, string str2);
 string itc_rev_str(string str);
+bool itc_isValidWord(string str);
+int itc_sign_cnt(string str);
+string itc_get_word(string str);
 
 #endif // MIDDLE_STR_H_INCLUDED
