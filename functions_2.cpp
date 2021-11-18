@@ -65,31 +65,21 @@ string itc_Cezar(string str, int k)
 {
 	if (str == "")
 		return "";
-	string result = "";
-	int _size = itc_len(str);
-	for (int i = 0; i < _size; i++)
+	k = (k + 26) % 26;
+	for (int i = 0; str[i] != '\0'; i++)
 	{
-		char c = ' ';
 		if (str[i] >= 'a' && str[i] <= 'z')
 		{
-			if (str[i] + k < 'a')
-				c = str[i] + k + ('z' - 'a' + 1);
-			else
-				c = str[i] + k;
-		}
-		else if (str[i] >= 'A' && str[i] <= 'Z')
-		{
-			if (str[i] + k < 'A')
-				c = str[i] + k + ('Z' - 'A' + 1);
-			else
-				c = str[i] + k;
-		}
-		
-		else
-			c = str[i];
-		result += c;
+		str[i] = str[i] - 'a' + k;
+		str[i] = str[i] % 26 + 'a';
 	}
-	return result;
+	else if (str[i] >= 'A' && str[i] <= 'Z')
+	{
+		str[i] = str[i] - 'A' + k;
+		str[i] = str[i] % 26 + 'A';
+		}
+	}
+	return str;
 }
 
 string itc_rmFreeSpace(string str)
