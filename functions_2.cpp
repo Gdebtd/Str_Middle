@@ -88,13 +88,18 @@ string itc_rmFreeSpace(string str)
 {
 	if (str == "")
 		return "";
-	string result = "";
-	str += " ";
-	result += str[0];
+	string _result = "";
+	_result += str[0];
 	for (int i = 1; str[i] != '\0'; i++)
 	{
 	if (!(str[i] == ' ' && str[i - 1] == ' '))
-		result += str[i];
+		_result += str[i];
 	}
+	string result = "";
+	int len = itc_len(_result);
+	if (_result[len - 1] == ' ')
+		len--;
+	for (int i = 0; i < len; i++)
+		result += _result[i];
 	return result;
 }
