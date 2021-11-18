@@ -36,7 +36,7 @@ string itc_maxCharWord(string str)
 char itc_sameChar(string str)
 {
 	if (str == "")
-		return "";
+		return '';
 	str += " ";
 	int _size = itc_len(str);
 	char c = ' ';
