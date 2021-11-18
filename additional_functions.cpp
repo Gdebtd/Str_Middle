@@ -59,17 +59,17 @@ bool itc_isValidWord(string str)
 	if (str == "")
 		return false;
 	int len = itc_len(str);
-	bool brackeys = false;
+	bool brackets = false;
 	if (str[0] == '(')
 	{
 		if (str[len - 1] != ')')
 			return false;
 		else
-			brackeys = true;
+			brackets = true;
 	}
 	else if (!((str[0] >= 'a' && str[0] <= 'z') || (str[0] >= 'A' && str[0] <= 'Z')))
 		return false;
-	if (!brackeys)
+	if (!brackets)
 	{
 		if (!((str[len - 1] >= 'a' && str[len - 1] <= 'z') || (str[len - 1] >= 'A' && str[len - 1] <= 'Z')))
 		{
