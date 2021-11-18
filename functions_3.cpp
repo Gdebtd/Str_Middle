@@ -2,6 +2,8 @@
 
 bool itc_isIp(string str)
 {
+	if (str == "")
+		return false;
 	int _size = itc_len(str), zeroCnt = 0, num = 0;
 	if (_size > 15 || _size < 7)
 		return false;
