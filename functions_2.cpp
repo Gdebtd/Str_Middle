@@ -5,32 +5,34 @@ string itc_maxCharWord(string str)
 	if (str == "")
 		return "error";
 	str += " ";
-	if (itc_countWords(str) <= 1)
-		return "error";
-	int max_cnt = 0, cnt = 0, _size = itc_len(str);
-	string str2 = "", answer = "";
-	for (int i = 0; i < _size; i++)
+	string word = "", result = "";
+	int cnt = 0, maxCnt = 0, wordsCnt = 0;
+	for (int i = 0; str[i] != '\0'; i++)
 	{
 		if (str[i] == ' ')
 		{
-			if (cnt > max_cnt)
+			if (itc_isValidWord(word))
 			{
-				max_cnt = cnt;
-				cnt = 0;
-				answer = str2;
+				wordsCnt++;
+				int signCnt = itc_sign_cnt(word);
+				if (cnt - signCnt > maxCnt)
+				{
+					maxCnt = cnt - signCnt;
+					result = itc_get_word(word);
+				}
 			}
-			str2 = "";
+			cnt = 0;
+			word = "";
 		}
 		else
 		{
-			if ((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <= 'Z'))
-			{
-				cnt++;
-				str2 += str[i];
-			}
+			word += str[i];
+			cnt++;
 		}
 	}
-	return answer;
+	if (wordsCnt == 0)
+		return "error";
+	return result;
 }
 
 char itc_sameChar(string str)
